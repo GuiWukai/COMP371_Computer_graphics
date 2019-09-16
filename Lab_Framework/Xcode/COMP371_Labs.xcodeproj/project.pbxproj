@@ -145,11 +145,11 @@
 			};
 			buildConfigurationList = 0371ABC61A6EAF2E00029CF8 /* Build configuration list for PBXProject "COMP371_Labs" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 0371ABC21A6EAF2E00029CF8;
 			productRefGroup = 0371ABCC1A6EAF2E00029CF8 /* Products */;

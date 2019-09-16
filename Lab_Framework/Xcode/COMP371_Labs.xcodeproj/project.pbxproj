@@ -86,7 +86,6 @@
 		0371ABC21A6EAF2E00029CF8 = {
 			isa = PBXGroup;
 			children = (
-				D3BEAB4923303A7600308F47 /* Code */,
 				038B785E1A6EB3F500111E36 /* Source */,
 				034F0BB31A7010160028E1BA /* Resources */,
 				034F0BB11A700D0F0028E1BA /* Linked Frameworks */,
@@ -110,13 +109,6 @@
 			);
 			name = Source;
 			path = ../Source;
-			sourceTree = "<group>";
-		};
-		D3BEAB4923303A7600308F47 /* Code */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

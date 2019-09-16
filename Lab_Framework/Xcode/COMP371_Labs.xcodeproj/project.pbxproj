@@ -15,6 +15,7 @@
 		038E0BD822BBEAB7009F05DA /* lab01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 038E0BD722BBEAB7009F05DA /* lab01.cpp */; };
 		03CF97D11B56DF9A00F60482 /* libfreeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CF97D01B56DF9A00F60482 /* libfreeimage.a */; };
 		03DA72D222B02FC5009C7A21 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DA72D122B02FC5009C7A21 /* libGLEW.a */; };
+		D3BEAB48233039AA00308F47 /* lab02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3BEAB46233039AA00308F47 /* lab02.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		038E0BD722BBEAB7009F05DA /* lab01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lab01.cpp; sourceTree = "<group>"; };
 		03CF97D01B56DF9A00F60482 /* libfreeimage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreeimage.a; path = "../ThirdParty/FreeImage-3170/lib/osx/libfreeimage.a"; sourceTree = "<group>"; };
 		03DA72D122B02FC5009C7A21 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = "../ThirdParty/glew-2.1.0/lib/osx/libGLEW.a"; sourceTree = "<group>"; };
+		D3BEAB46233039AA00308F47 /* lab02.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lab02.cpp; sourceTree = "<group>"; };
+		D3BEAB47233039AA00308F47 /* lab02.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lab02.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				038E0BD722BBEAB7009F05DA /* lab01.cpp */,
+				D3BEAB46233039AA00308F47 /* lab02.cpp */,
+				D3BEAB47233039AA00308F47 /* lab02.hpp */,
 			);
 			name = Source;
 			path = ../Source;
@@ -167,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				038E0BD822BBEAB7009F05DA /* lab01.cpp in Sources */,
+				D3BEAB48233039AA00308F47 /* lab02.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

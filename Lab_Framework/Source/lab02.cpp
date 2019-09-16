@@ -8,13 +8,14 @@ tr//
 // - https://learnopengl.com/Getting-started/Hello-Triangle
 
 #include <iostream>
+#include "lab02.hpp"
 
 
 #define GLEW_STATIC 1   // This allows linking with Static Library on Windows, without DLL
 #include <GL/glew.h>    // Include GLEW - OpenGL Extension Wrangler
 
 #include <GLFW/glfw3.h> // GLFW provides a cross-platform interface for creating a graphical context,
-                        // initializing OpenGL and binding inputs
+// initializing OpenGL and binding inputs
 
 #include <glm/glm.hpp>  // GLM is an optimized math library with syntax to similar to OpenGL Shading Language
 #include <glm/gtc/matrix_transform.hpp> // include this to create transformation matrices
@@ -22,30 +23,30 @@ tr//
 const char* getVertexShaderSource()
 {
     // For now, you use a string for your shader code, in the assignment, shaders will be stored in .glsl files
-	//TODO 1
+    //TODO 1
     return
-                "#version 330 core\n"
-                "layout (location = 0) in vec3 aPos;"
-                "layout (location = 1) in vec3 aColor;"
-                "out vec3 vertexColor;"
-                "void main()"
-                "{"
-                "   vertexColor = aColor;"
-                "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);"
-                "}";
+    "#version 330 core\n"
+    "layout (location = 0) in vec3 aPos;"
+    "layout (location = 1) in vec3 aColor;"
+    "out vec3 vertexColor;"
+    "void main()"
+    "{"
+    "   vertexColor = aColor;"
+    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);"
+    "}";
 }
 
 
 const char* getFragmentShaderSource()
 {
     return
-                "#version 330 core\n"
-                "in vec3 vertexColor;"
-                "out vec4 FragColor;"
-                "void main()"
-                "{"
-                "   FragColor = vec4(vertexColor.r, vertexColor.g, vertexColor.b, 1.0f);"
-                "}";
+    "#version 330 core\n"
+    "in vec3 vertexColor;"
+    "out vec4 FragColor;"
+    "void main()"
+    "{"
+    "   FragColor = vec4(vertexColor.r, vertexColor.g, vertexColor.b, 1.0f);"
+    "}";
 }
 
 
@@ -54,7 +55,7 @@ int compileAndLinkShaders()
     // compile and link shader program
     // return shader program id
     // ------------------------------------
-
+    
     // vertex shader
     int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     const char* vertexShaderSource = getVertexShaderSource();
@@ -127,7 +128,7 @@ int createVertexBufferObject()
     glGenBuffers(1, &vertexBufferObject);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexArray), vertexArray, GL_STATIC_DRAW);
-
+    
     glVertexAttribPointer(0,                   // attribute 0 matches aPos in Vertex Shader
                           3,                   // size
                           GL_FLOAT,            // type
@@ -136,8 +137,8 @@ int createVertexBufferObject()
                           (void*)0             // array buffer offset
                           );
     glEnableVertexAttribArray(0);
-
-
+    
+    
     glVertexAttribPointer(1,                            // attribute 1 matches aColor in Vertex Shader
                           3,
                           GL_FLOAT,
@@ -146,7 +147,7 @@ int createVertexBufferObject()
                           (void*)sizeof(glm::vec3)      // color is offseted a vec3 (comes after position)
                           );
     glEnableVertexAttribArray(1);
-
+    
     
     return vertexBufferObject;
 }
@@ -167,7 +168,7 @@ int main(int argc, char*argv[])
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
 #endif
-
+    
     // Create Window and rendering context using GLFW, resolution is 800x600
     GLFWwindow* window = glfwCreateWindow(800, 600, "Comp371 - Lab 02", NULL, NULL);
     if (window == NULL)
@@ -178,7 +179,7 @@ int main(int argc, char*argv[])
     }
     glfwMakeContextCurrent(window);
     
-
+    
     // Initialize GLEW
     glewExperimental = true; // Needed for core profile
     if (glewInit() != GLEW_OK) {
@@ -186,7 +187,7 @@ int main(int argc, char*argv[])
         glfwTerminate();
         return -1;
     }
-
+    
     // Black background
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     
@@ -200,42 +201,42 @@ int main(int argc, char*argv[])
     float angle = 0;
     float rotationSpeed = 180.0f;  // 180 degrees per second
     float lastFrameTime = glfwGetTime();
-
-	//TODO 4 - Backface culling
-
+    
+    //TODO 4 - Backface culling
+    
     // Entering Main Loop
     while(!glfwWindowShouldClose(window))
     {
         // Each frame, reset color of each pixel to glClearColor
         glClear(GL_COLOR_BUFFER_BIT);
-
+        
         
         // Drawing setup
         glUseProgram(shaderProgram);
         glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-		//TODO 2 Calculate new geometry with animation
-		/*
-		//Calculate frame time
-		float dt;
-		lastFrameTime = 0;
-
-		//calculate new angle and corresponding rotation matrix
-		angle = 0;
-		glm::mat4 rotationMatrix;
-
-		//Send matrix to GPU
-		GLuint worldMatrixLocation = glGetUniformLocation(shaderProgram, "VARIABLE_NAME");
-		glUniformMatrix4fv(worldMatrixLocation, 1, GL_FALSE, MATRIX)
-		*/
-
-
-		//Draw geometry
+        
+        //TODO 2 Calculate new geometry with animation
+        /*
+         //Calculate frame time
+         float dt;
+         lastFrameTime = 0;
+         
+         //calculate new angle and corresponding rotation matrix
+         angle = 0;
+         glm::mat4 rotationMatrix;
+         
+         //Send matrix to GPU
+         GLuint worldMatrixLocation = glGetUniformLocation(shaderProgram, "VARIABLE_NAME");
+         glUniformMatrix4fv(worldMatrixLocation, 1, GL_FALSE, MATRIX)
+         */
+        
+        
+        //Draw geometry
         glDrawArrays(GL_TRIANGLES, 0, 3); // 3 vertices, starting at index 0
-
-
-		//TODO 3 - Draw more triangles!
-
+        
+        
+        //TODO 3 - Draw more triangles!
+        
         // End Frame
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -243,39 +244,39 @@ int main(int argc, char*argv[])
         // Handle inputs
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, true);
-
-		//TODO 5 Camera Positions
-
-		if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
-		{
-
-		}
-
-		if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
-		{
-
-		}
-
-
-		//TODO 6 Camera Projections
-
-		if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
-		{
-
-		}
-
-		if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS)
-		{
-
-		}
-
-
-		//Excercise: Make the camera controllable
-
+        
+        //TODO 5 Camera Positions
+        
+        if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
+        {
+            
+        }
+        
+        if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
+        {
+            
+        }
+        
+        
+        //TODO 6 Camera Projections
+        
+        if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
+        {
+            
+        }
+        
+        if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS)
+        {
+            
+        }
+        
+        
+        //Excercise: Make the camera controllable
+        
     }
     
     // Shutdown GLFW
     glfwTerminate();
     
-	return 0;
+    return 0;
 }

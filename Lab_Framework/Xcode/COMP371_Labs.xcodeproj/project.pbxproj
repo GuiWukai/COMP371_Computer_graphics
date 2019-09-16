@@ -12,7 +12,6 @@
 		038B79161A6FF2E900111E36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038B79151A6FF2E900111E36 /* Cocoa.framework */; };
 		038B791A1A6FF39000111E36 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038B79191A6FF39000111E36 /* CoreVideo.framework */; };
 		038B791E1A6FF3EB00111E36 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038B791D1A6FF3EB00111E36 /* IOKit.framework */; };
-		038E0BD822BBEAB7009F05DA /* lab01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 038E0BD722BBEAB7009F05DA /* lab01.cpp */; };
 		03CF97D11B56DF9A00F60482 /* libfreeimage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CF97D01B56DF9A00F60482 /* libfreeimage.a */; };
 		03DA72D222B02FC5009C7A21 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03DA72D122B02FC5009C7A21 /* libGLEW.a */; };
 		D3BEAB48233039AA00308F47 /* lab02.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3BEAB46233039AA00308F47 /* lab02.cpp */; };
@@ -38,7 +37,6 @@
 		038B79191A6FF39000111E36 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		038B791B1A6FF3D100111E36 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		038B791D1A6FF3EB00111E36 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		038E0BD722BBEAB7009F05DA /* lab01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lab01.cpp; sourceTree = "<group>"; };
 		03CF97D01B56DF9A00F60482 /* libfreeimage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreeimage.a; path = "../ThirdParty/FreeImage-3170/lib/osx/libfreeimage.a"; sourceTree = "<group>"; };
 		03DA72D122B02FC5009C7A21 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = "../ThirdParty/glew-2.1.0/lib/osx/libGLEW.a"; sourceTree = "<group>"; };
 		D3BEAB46233039AA00308F47 /* lab02.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lab02.cpp; sourceTree = "<group>"; };
@@ -88,6 +86,7 @@
 		0371ABC21A6EAF2E00029CF8 = {
 			isa = PBXGroup;
 			children = (
+				D3BEAB4923303A7600308F47 /* Code */,
 				038B785E1A6EB3F500111E36 /* Source */,
 				034F0BB31A7010160028E1BA /* Resources */,
 				034F0BB11A700D0F0028E1BA /* Linked Frameworks */,
@@ -106,12 +105,18 @@
 		038B785E1A6EB3F500111E36 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				038E0BD722BBEAB7009F05DA /* lab01.cpp */,
 				D3BEAB46233039AA00308F47 /* lab02.cpp */,
 				D3BEAB47233039AA00308F47 /* lab02.hpp */,
 			);
 			name = Source;
 			path = ../Source;
+			sourceTree = "<group>";
+		};
+		D3BEAB4923303A7600308F47 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Code;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +176,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038E0BD822BBEAB7009F05DA /* lab01.cpp in Sources */,
 				D3BEAB48233039AA00308F47 /* lab02.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
